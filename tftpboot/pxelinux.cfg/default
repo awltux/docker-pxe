@@ -1,12 +1,15 @@
-DEFAULT memtest86
+DEFAULT rancheros
   SAY Now booting in the PXE Boot MENU...
 
 LABEL memtest86
   MENU LABEL Memtest86+
   KERNEL /memtest/memtest86+
-# eventually include additional entries
-INCLUDE pxelinux.cfg/additional_menu_entries
 
+LABEL rancheros
+  MENU LABEL rancheros
+  KERNEL http://10.0.2.5:8081/rancheros/1.1.0-RC3/os/boot/vmlinuz-4.9.44-rancher
+  INITRD http://10.0.2.5:8081/rancheros/1.1.0-RC3/os/boot/initrd-v1.1.0-rc3
+  
 MENU CMDLINEROW 15
 MENU COLOR title 1;34;49 #eea0a0ff #cc333355 std
 MENU COLOR sel 7;37;40 #ff000000 #bb9999aa all
