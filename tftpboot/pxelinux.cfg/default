@@ -9,6 +9,7 @@ LABEL rancheros
   MENU LABEL rancheros
   KERNEL http://10.0.2.5:8081/rancheros/1.1.0-RC3/os/boot/vmlinuz-4.9.44-rancher
   INITRD http://10.0.2.5:8081/rancheros/1.1.0-RC3/os/boot/initrd-v1.1.0-rc3
+  APPEND rancheros-v1.1.0-rc3 rancher.autologin=tty1 rancher.autologin=ttyS0 rancher.state.dev=LABEL=RANCHER_STATE rancher.state.autoformat=[/dev/sda] rancher.cloud_init.datasources=[url:http://10.0.2.5:8081/rancheros/1.1.0-RC3/cloud-config]
   
 MENU CMDLINEROW 15
 MENU COLOR title 1;34;49 #eea0a0ff #cc333355 std
